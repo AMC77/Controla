@@ -5,8 +5,273 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Controla"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="800"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
     <Grid>
-        
+        <Border 
+            CornerRadius="50" 
+           
+            
+            BorderThickness="10">
+            <Border.BorderBrush>
+                <LinearGradientBrush
+                    StartPoint="0,0"
+                    EndPoint="1,1"
+                    >
+                    <GradientStop Color="#A5FECB" Offset="0"/>
+                    <GradientStop Color="#20BDFF" Offset="0.10"/>
+                    <GradientStop Color="#5433FF" Offset="0.40"/>
+                </LinearGradientBrush>
+
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#f7797d" Offset="0"/>
+                    <GradientStop Color="#c471ed" Offset="0.15"/>
+                    <GradientStop Color="#12c2e9" Offset="0.7"/>
+
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="ACCESO DE USUARIO"
+                               Foreground="DarkBlue"
+                               
+                               FontSize="20"
+                               FontFamily="Oswald"
+                               FontStyle="Italic"
+                               Grid.Column="0"
+                               FontWeight="Medium"
+                               
+                               VerticalAlignment="Center"
+                               Margin="30,0,0,0"/>
+                    <Button x:Name="btnMinimizarVentana"
+                           
+                            BorderThickness="1"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Monserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimizarVentana_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="OrangeRed"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="HotPink"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button" >
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                    <Button x:Name="btnCerrarVentana"
+                           
+                            BorderThickness="1"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Monserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnCerrarVentana_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="OrangeRed"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="HotPink"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button" >
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </Grid>
+
+                <StackPanel Width="250"
+                            Grid.Row="2"
+                            Orientation="Vertical"
+                            Margin="0,35,0,0">
+                    <Image Source="/stop.png" Width="100"/>
+
+                    <TextBlock Text="CONTROL"
+                               Foreground="White"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Monserrat"
+                               HorizontalAlignment="Center"
+                               />
+                    <TextBlock Text="El tiempo es lo mas valioso que tenemos, no lo pierda"
+                               Foreground="LightGray"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Monserrat"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"/>
+                    <TextBlock Text="Nombre"
+                               Foreground="White"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Monserrat"
+                               Margin="0,35,0,0"/>
+                    <TextBox x:Name="txtUser"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monserrat"
+                             
+                             Foreground="White"
+                             BorderBrush="LightBlue"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="25,0,0,0" 
+                             
+                             >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/usuario.png"
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"
+                                        
+                                        />
+
+                        </TextBox.Background>
+
+
+                    </TextBox>
+                    <TextBlock Text="Contraseña"
+                               Foreground="White"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Monserrat"
+                               Margin="0,35,0,0"
+                               />
+                    <TextBox x:Name="txtPassword"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monserrat"
+                             
+                             Foreground="White"
+                             BorderBrush="LightBlue"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="25,0,0,0" 
+                             
+                             >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/candado.png"
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"
+                                        />
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <Button x:Name="btnInicio"
+                           
+                            BorderThickness="1"
+                            Content="ENTRAR"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Monserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnInicio_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="OrangeRed"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="HotPink"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button" >
+                                <Border Width="150" Height="25"
+                                        Margin="0,20,0,0"
+                                        CornerRadius="12"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5,0,0">
+                        <TextBlock Text="¿Olvidaste la contraseña?"
+                                   Foreground="White"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Monserrat"
+                                   Cursor="Hand"
+                                   />
+                        <TextBlock Text="Borrar"
+                                   Foreground="White"
+                                   FontSize="12"
+                                   FontWeight="Medium"
+                                   FontFamily="Monserrat"
+                                   Cursor="Hand"
+                                   Margin="10,0,0,0"/>
+                    </StackPanel>
+
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+
     </Grid>
+
 </Window>

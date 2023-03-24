@@ -24,5 +24,28 @@ namespace Controla
         {
             InitializeComponent();
         }
+        private void Window_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed) DragMove();
+        }
+        private void btnMinimizarVentana_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void btnCerrarVentana_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void btnInicio_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("todo bien");
+        }
+
     }
 }
