@@ -64,7 +64,7 @@
                                
                                VerticalAlignment="Center"
                                Margin="30,0,0,0"/>
-                    <Button x:Name="btnMinimizarVentana"
+                    <Button x:Name="BtnMinimizarVentana"
                            
                             BorderThickness="1"
                             Content="-"
@@ -73,7 +73,7 @@
                             FontFamily="Monserrat"
                             Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnMinimizarVentana_Click">
+                            Click="BtnMinimizarVentana_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="OrangeRed"/>
@@ -97,7 +97,7 @@
                         </Button.Template>
 
                     </Button>
-                    <Button x:Name="btnCerrarVentana"
+                    <Button x:Name="BtnCerrarVentana"
                            
                             BorderThickness="1"
                             Content="X"
@@ -106,7 +106,7 @@
                             FontFamily="Monserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Click="btnCerrarVentana_Click">
+                            Click="BtnCerrarVentana_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="OrangeRed"/>
@@ -212,7 +212,7 @@
                         </TextBox.Background>
                     </TextBox>
 
-                    <Button x:Name="btnInicio"
+                    <Button x:Name="BtnInicio"
                            
                             BorderThickness="1"
                             Content="ENTRAR"
@@ -221,7 +221,7 @@
                             FontFamily="Monserrat"
                             Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnInicio_Click">
+                            Click="BtnInicio_Click">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="OrangeRed"/>
