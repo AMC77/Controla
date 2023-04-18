@@ -39,13 +39,31 @@ namespace Controla
 
         private void TxtUser_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void BtnInicio_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("todo bien");
+            var nombre =txtUser.Text;
+
+            if (nombre == "a")
+            {
+                Administrador administrador = new Administrador();
+
+                administrador.Show();
+                this.Close();
+            }
+            if (nombre == "b")
+            {
+                Usuario usuario = new Usuario();
+                usuario.Show();
+                this.Close();
+            }
         }
 
+        private void txtUser_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -169,7 +169,7 @@
                              Height="28"
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
-                             Padding="25,0,0,0" 
+                             Padding="25,0,0,0" TextChanged="txtUser_TextChanged_1" 
                              
                              >
                         <TextBox.Background>
